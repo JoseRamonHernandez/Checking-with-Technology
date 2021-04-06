@@ -9,6 +9,7 @@ import 'home_page.dart';
 
 
 class DrawerPage extends StatelessWidget {
+  
   List<Usuarios> items;
   @override
   Widget build(BuildContext context) {
@@ -21,6 +22,20 @@ class DrawerPage extends StatelessWidget {
              
              padding: EdgeInsets.zero,
              children: <Widget>[
+
+              /* DrawerHeader(
+        padding: EdgeInsets.zero,
+        margin: EdgeInsets.zero,
+        child: Container(
+          decoration: BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('assets/logo.jpg'),
+              fit: BoxFit.cover,
+            ),
+          ),
+        ),
+               ),*/
+
                Divider(),
                Divider(),
               Divider(),

@@ -17,7 +17,7 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
 
 List<Usuarios> items;
 
-TextEditingController _cedulaController;
+TextEditingController _numUsuarioController;
 TextEditingController _nombreController;
 TextEditingController _apellidosController;
 TextEditingController _direccionController;
@@ -26,7 +26,7 @@ TextEditingController _telefonoController;
 @override
 void initState() { 
   super.initState();
-  _cedulaController = new TextEditingController(text: widget.usuarios.cedula);
+  _numUsuarioController = new TextEditingController(text: widget.usuarios.numUsuario);
  _nombreController = new TextEditingController(text: widget.usuarios.nombre);
  _apellidosController = new TextEditingController(text: widget.usuarios.apellidos);
  _direccionController = new TextEditingController(text: widget.usuarios.direccion);
@@ -50,10 +50,10 @@ void initState() {
             child: Column(
               children: <Widget>[
                 TextField(
-                  controller: _cedulaController,
+                  controller: _numUsuarioController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
                   decoration: InputDecoration(icon: Icon(Icons.batch_prediction_rounded),
-                  labelText: 'Cedula'),
+                  labelText: 'Numero de Usuario'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
@@ -92,7 +92,7 @@ void initState() {
                 FlatButton(onPressed: (){
                   if(widget.usuarios.id != null){
                     usuariosReference.child(widget.usuarios.id).set({
-                    'cedula': _cedulaController.text,
+                    'numero de usuario': _numUsuarioController.text,
                     'nombre': _nombreController.text,
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
@@ -103,7 +103,7 @@ void initState() {
                   }
                   else{
                     usuariosReference.push().set({
-                      'cedula': _cedulaController.text,
+                      'numero de usuario': _numUsuarioController.text,
                     'nombre': _nombreController.text,
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,

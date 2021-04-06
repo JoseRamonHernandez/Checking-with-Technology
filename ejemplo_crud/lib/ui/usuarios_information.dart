@@ -37,7 +37,7 @@ List<Usuarios> items;
           child: Center(
             child: Column(
             children: <Widget>[
-              new Text("Cedula: ${widget.usuarios.cedula}", style: TextStyle(fontSize: 18.0),),
+              new Text("Numero de Usuario: ${widget.usuarios.numUsuario}", style: TextStyle(fontSize: 18.0),),
               Padding(padding: EdgeInsets.only(top: 8.0),),
               Divider(), 
               new Text("Nombre: ${widget.usuarios.nombre}", style: TextStyle(fontSize: 18.0),),

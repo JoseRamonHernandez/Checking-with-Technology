@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:ejemplo_crud/model/usuarios.dart';
 
+import 'listview_usuarios.dart';
+
 class UsuariosScreen extends StatefulWidget {
   final Usuarios usuarios;
   UsuariosScreen(this.usuarios);
@@ -119,6 +121,16 @@ void initState() {
           ),
           borderOnForeground: true,
         ),
+      ),
+        floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(new MaterialPageRoute(
+                   builder: (BuildContext context) => ListViewUsuarios(),
+                 ));
+          // Add your onPressed code here!
+        },
+        child: const Icon(Icons.arrow_back_outlined, color: Colors.black,),
+        backgroundColor: Colors.yellowAccent,
       ),
       backgroundColor: Colors.white,
     );

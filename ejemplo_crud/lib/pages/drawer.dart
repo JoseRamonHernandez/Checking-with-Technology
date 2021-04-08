@@ -17,26 +17,27 @@ class DrawerPage extends StatelessWidget {
     return Drawer(
       
          child: Container(
-           color: Color(0xFF000000),
+           color: Colors.black87,
            child: ListView(
              
              padding: EdgeInsets.zero,
              children: <Widget>[
-
-              /* DrawerHeader(
+               //Divider(),
+               DrawerHeader(
         padding: EdgeInsets.zero,
         margin: EdgeInsets.zero,
         child: Container(
           decoration: BoxDecoration(
             image: DecorationImage(
+              
               image: AssetImage('assets/logo.jpg'),
               fit: BoxFit.cover,
             ),
           ),
         ),
-               ),*/
+               ),
 
-               Divider(),
+               
                Divider(),
               Divider(),
                ListTile(
@@ -82,6 +83,28 @@ class DrawerPage extends StatelessWidget {
                ListTile(
                  leading: Icon(Icons.alt_route_outlined, color: Color(0xffFFDA0A),size: 35,),
                  title: Text('Entradas/Salidas',
+                 style: TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),),
+                 
+                 onTap: ()=> Navigator.of(context).push(new MaterialPageRoute(
+                   builder: (BuildContext context) => RegistroPage(),
+                 ))
+                 
+               ),
+                 Divider(),
+                  Divider(),
+                   Divider(),
+                   Divider(),
+                    Divider(),
+                     Divider(),
+                      Divider(),
+                       Divider(),
+                        Divider(),
+               ListTile(
+                 leading: Icon(Icons.alt_route_outlined, color: Color(0xffFFDA0A),size: 35,),
+                 title: Text('Créditos',
                  style: TextStyle(
                 color: Colors.white,
                 fontSize: 20,

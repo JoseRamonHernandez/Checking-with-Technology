@@ -27,13 +27,21 @@ List<Usuarios> items;
     return Scaffold(
       drawer: DrawerPage(),
       appBar: AppBar(
-        title: Text('Informacion de los Usuarios'),
+        centerTitle: true,
+        title: Text('Informacion del Usuario',),
+        
         backgroundColor: Colors.black,
       ),
       body: Container(
+        
+        color: Colors.black,
         height: 400.0,
         padding: const EdgeInsets.all(20.0),
         child: Card(
+          shape: RoundedRectangleBorder(
+           borderRadius: BorderRadius.circular(20.0),
+         ),
+          color: Colors.yellowAccent,
           child: Center(
             child: Column(
             children: <Widget>[
@@ -53,11 +61,13 @@ List<Usuarios> items;
               Padding(padding: EdgeInsets.only(top: 8.0),),
               Divider(),
             ],
+            
             ),
           ),
+          
         )
       ),
-      
+      backgroundColor: Colors.black,
     );
   }
 }

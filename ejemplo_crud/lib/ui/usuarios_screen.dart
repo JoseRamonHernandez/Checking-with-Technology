@@ -52,7 +52,7 @@ void initState() {
                 TextField(
                   controller: _numUsuarioController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.batch_prediction_rounded),
+                  decoration: InputDecoration(icon: Icon(Icons.attribution_outlined),
                   labelText: 'Numero de Usuario'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
@@ -68,7 +68,7 @@ void initState() {
                 TextField(
                   controller: _apellidosController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.account_box),
+                  decoration: InputDecoration(icon: Icon(Icons.article_sharp),
                   labelText: 'Apellidos'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
@@ -76,7 +76,7 @@ void initState() {
                 TextField(
                   controller: _direccionController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.add_location_rounded),
+                  decoration: InputDecoration(icon: Icon(Icons.add_location_alt_sharp),
                   labelText: 'Dirección'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
@@ -84,7 +84,7 @@ void initState() {
                 TextField(
                   controller: _telefonoController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.call),
+                  decoration: InputDecoration(icon: Icon(Icons.contact_phone_sharp),
                   labelText: 'Teléfono'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),

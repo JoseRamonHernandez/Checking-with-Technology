@@ -23,7 +23,7 @@ class _HomePageState extends State<HomePage> {
                 child: Column(
                   children: [
                      new Image.asset(
-              'assets/logo.jpg',
+              'assets/logo3.jpg',
               width: 473.0,
               height: 432.0,
                      ),

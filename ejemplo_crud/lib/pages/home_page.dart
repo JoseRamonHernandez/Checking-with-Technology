@@ -26,8 +26,8 @@ class _HomePageState extends State<HomePage> {
               SizedBox(height: 10.0,),
                      new Image.asset(
               'assets/logo3.jpg',
-              width: 400.0,
-              height: 432.0,
+              width: 800.0,
+              height: 600.0,
                      ),
               Divider(),
               Divider(),

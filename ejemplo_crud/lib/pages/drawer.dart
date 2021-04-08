@@ -80,7 +80,7 @@ class DrawerPage extends StatelessWidget {
                    builder: (BuildContext context) => UsuariosScreen(Usuarios(null, '','','','','')),
                  ))
                ),
-                Divider(),
+              Divider(),
                ListTile(
                  leading: Icon(Icons.close_fullscreen_outlined, color: Color(0xffFFDA0A),size: 35,),
                  title: Text('Entradas/Salidas',

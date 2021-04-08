@@ -64,8 +64,8 @@ class _CreditosPageState extends State<CreditosPage> {
              
               new Image.asset(
               'assets/logo2.jpg',
-              width: 400.0,
-              height: 100.0,
+              width: 600.0,
+              height: 400.0,
                      ),
             ]),
           ),

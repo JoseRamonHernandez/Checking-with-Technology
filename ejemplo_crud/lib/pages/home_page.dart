@@ -13,21 +13,60 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       drawer: DrawerPage(),
-      appBar: AppBar(
+     /* appBar: AppBar(
         centerTitle: true,
         title: Text('Checking With Technology', style: TextStyle(color: Colors.yellowAccent,)),
         backgroundColor: Colors.black,
-      ),
-      body: Center(
-              child: Container(
-         
-          child: Text(
-            'Aplicación que registra, modifica y elimina datos de empleados y muestra registro de entradas y salidas.',
+      ),*/
+      body: CustomScrollView(
+        slivers: <Widget>[
+          _crearAppBAr(),
+             SliverList(
+            delegate: SliverChildListDelegate([
+              SizedBox(height: 10.0,),
+                     new Image.asset(
+              'assets/logo3.jpg',
+              width: 400.0,
+              height: 432.0,
+                     ),
+              Divider(),
+              Divider(),
+                    Text(
+            '* Aplicación que registra, modifica y elimina datos de empleados.',
             style: TextStyle(fontSize: 30, color: Colors.white,), textAlign: TextAlign.center,
+          
           ),
-        ),
+          Divider(),
+          Divider(),
+          Text(
+            '* Muestra registro de entradas y salidas.',
+            style: TextStyle(fontSize: 30, color: Colors.white,), textAlign: TextAlign.center,),
+                ]),
+          ),
+          ],
       ),
+     
       backgroundColor: Colors.black
     );
   }
 }
+
+ Widget _crearAppBAr( )
+  {
+    return SliverAppBar(
+      elevation: 2.0,
+      backgroundColor: Colors.black,
+      expandedHeight: 180.0,
+      floating: false,
+      pinned: true,
+      flexibleSpace: FlexibleSpaceBar(
+        centerTitle: true,
+      title: Text('CHECKING WITH TECHNOLOGY',
+      style: TextStyle(color: Colors.white, fontSize: 18.0),
+      ),
+       background:(
+         Image.asset('assets/logo4.jpg')
+       ), 
+      ),
+    );
+  }

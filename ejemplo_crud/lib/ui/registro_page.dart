@@ -24,6 +24,7 @@ class _RegistroPageState extends State<RegistroPage> {
           child: Text(
             'Aquí se mostraran los registros de entradas y salidas, que obtendremos directamente de firebase, una vez siendo almacenadas desde el arduino', style: TextStyle(fontSize: 30, color: Colors.white,), textAlign: TextAlign.center,
           ),
+          
         ),
       ),
       backgroundColor: Colors.black,

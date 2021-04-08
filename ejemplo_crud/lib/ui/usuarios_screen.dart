@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:ejemplo_crud/model/usuarios.dart';
 
+import 'listview_usuarios.dart';
+
 class UsuariosScreen extends StatefulWidget {
   final Usuarios usuarios;
   UsuariosScreen(this.usuarios);
@@ -17,7 +19,7 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
 
 List<Usuarios> items;
 
-TextEditingController _cedulaController;
+TextEditingController _numUsuarioController;
 TextEditingController _nombreController;
 TextEditingController _apellidosController;
 TextEditingController _direccionController;
@@ -26,7 +28,7 @@ TextEditingController _telefonoController;
 @override
 void initState() { 
   super.initState();
-  _cedulaController = new TextEditingController(text: widget.usuarios.cedula);
+  _numUsuarioController = new TextEditingController(text: widget.usuarios.numUsuario);
  _nombreController = new TextEditingController(text: widget.usuarios.nombre);
  _apellidosController = new TextEditingController(text: widget.usuarios.apellidos);
  _direccionController = new TextEditingController(text: widget.usuarios.direccion);
@@ -50,10 +52,10 @@ void initState() {
             child: Column(
               children: <Widget>[
                 TextField(
-                  controller: _cedulaController,
+                  controller: _numUsuarioController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.batch_prediction_rounded),
-                  labelText: 'Cedula'),
+                  decoration: InputDecoration(icon: Icon(Icons.attribution_outlined),
+                  labelText: 'Numero de Usuario'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
@@ -68,7 +70,7 @@ void initState() {
                 TextField(
                   controller: _apellidosController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.account_box),
+                  decoration: InputDecoration(icon: Icon(Icons.article_sharp),
                   labelText: 'Apellidos'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
@@ -76,7 +78,7 @@ void initState() {
                 TextField(
                   controller: _direccionController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.add_location_rounded),
+                  decoration: InputDecoration(icon: Icon(Icons.add_location_alt_sharp),
                   labelText: 'Dirección'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
@@ -84,7 +86,7 @@ void initState() {
                 TextField(
                   controller: _telefonoController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.call),
+                  decoration: InputDecoration(icon: Icon(Icons.contact_phone_sharp),
                   labelText: 'Teléfono'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
@@ -92,7 +94,7 @@ void initState() {
                 FlatButton(onPressed: (){
                   if(widget.usuarios.id != null){
                     usuariosReference.child(widget.usuarios.id).set({
-                    'cedula': _cedulaController.text,
+                    'numero de usuario': _numUsuarioController.text,
                     'nombre': _nombreController.text,
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
@@ -103,7 +105,7 @@ void initState() {
                   }
                   else{
                     usuariosReference.push().set({
-                      'cedula': _cedulaController.text,
+                      'numero de usuario': _numUsuarioController.text,
                     'nombre': _nombreController.text,
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
@@ -119,6 +121,16 @@ void initState() {
           ),
           borderOnForeground: true,
         ),
+      ),
+        floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.of(context).push(new MaterialPageRoute(
+                   builder: (BuildContext context) => ListViewUsuarios(),
+                 ));
+          // Add your onPressed code here!
+        },
+        child: const Icon(Icons.arrow_back_outlined, color: Colors.black,),
+        backgroundColor: Colors.yellowAccent,
       ),
       backgroundColor: Colors.white,
     );

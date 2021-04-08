@@ -7,12 +7,14 @@ import 'package:ejemplo_crud/ui/usuarios_information.dart';
 import 'package:ejemplo_crud/model/usuarios.dart';
 
 class ListViewUsuarios extends StatefulWidget {
+  
 
   @override
   _ListViewUsuariosState createState() => _ListViewUsuariosState();
 }
 
 final usuariosReference = FirebaseDatabase.instance.reference().child('usuarios');   
+final estiloTexto = new TextStyle(color: Colors.black);
 
 class _ListViewUsuariosState extends State<ListViewUsuarios> {
  List<Usuarios> items;
@@ -58,7 +60,7 @@ Widget build(BuildContext context){
               Divider (height: 7.0,),
               Row(
                 children: <Widget>[
-                  Expanded(child: ListTile(title: Text('${items[position].cedula}',
+                  Expanded(child: ListTile(title: Text('${items[position].numUsuario}',
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 21.0,
@@ -84,7 +86,7 @@ Widget build(BuildContext context){
                     ),
                     onTap: () => _navigateToUsuariosInformation(context, items[position])),),
                   IconButton(
-                    icon: Icon(Icons.delete, color: Colors.red), onPressed: () => _deleteUsuarios(context, items[position], position )),
+                    icon: Icon(Icons.delete, color: Colors.red), onPressed: () => _mostrarAlerta(context, items[position], position )),
                   IconButton(
                     icon: Icon(Icons.edit, color: Colors.blueAccent), onPressed: () => _navigateToUsuarios(context, items[position])),
                 ],
@@ -150,4 +152,45 @@ await Navigator.push(context,
 MaterialPageRoute(builder: (context) => UsuariosScreen(Usuarios(null, '','','','',''))),);
 
 }*/
+ void _mostrarAlerta(BuildContext context, Usuarios usuarios, int position){
+   
+    showDialog(
+      context: context,
+      barrierDismissible: false,
+      builder: (context)
+      {
+        return AlertDialog(
+          shape: RoundedRectangleBorder( borderRadius: BorderRadius.circular(20.0)),
+          title: Text('Alerta', style: estiloTexto, textAlign: TextAlign.center,),
+          content: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text('Estás seguiro de eliminar al usuario', style: estiloTexto,),
+              
+            ],
+          ),
+
+          actions: <Widget>[
+            FlatButton(
+              child: Text('SI', style: estiloTexto,),
+              onPressed: (){
+                 _deleteUsuarios(context, items[position], position );
+                  Navigator.of(context).pop();
+              },
+            ),
+            FlatButton(
+              child: Text('NO', style: estiloTexto,),
+              onPressed: (){
+                Navigator.of(context).pop();
+              },
+            )
+          ],
+
+          backgroundColor: Colors.yellowAccent
+          
+          
+        );
+      }
+    );
+  }
 }

@@ -1,13 +1,21 @@
 //import 'package:flutter/material.dart';
-
+import 'package:firebase_database/firebase_database.dart';
 class Post {
-  String nombre;
-  String dentro;
-  Post(this.nombre,this.dentro);
+  String _nombre;
+  String _dentro;
+  Post(this._nombre,this._dentro);
 
-  Post.fromJson(var value){
-    this.nombre = value['Usuario'];
-    this.dentro = value['Ingreso'];
+ 
+ Post.map(dynamic obj){
+    this._nombre = obj ['Nombre de Usuario'];
+    this._dentro = obj ['Status'];
   }
+  String get nombre => _nombre;
+  String get dentro => _dentro;
 
+  Post.fromSnapShot(DataSnapshot snapshot){
+    _nombre = snapshot.value['Nombre Usuario'];
+    _dentro = snapshot.value['status'];
+  
+  }
 }

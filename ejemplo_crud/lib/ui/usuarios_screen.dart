@@ -116,7 +116,7 @@ void initState() {
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
                     'telefono': _telefonoController.text,  
-                    'status': _statusController.value.text,
+                    'status': _statusController.text,
                     }).then((_){
                       Navigator.pop(context);
                     });

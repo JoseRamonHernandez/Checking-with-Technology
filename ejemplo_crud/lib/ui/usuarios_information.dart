@@ -40,7 +40,7 @@ List<Usuarios> items;
         
         color: Colors.black,
         height: 400.0,
-        padding: const EdgeInsets.all(30.0),
+        padding: const EdgeInsets.all(20.0),
         child: Card(
           shape: RoundedRectangleBorder(
            borderRadius: BorderRadius.circular(40.0),
@@ -65,6 +65,16 @@ List<Usuarios> items;
               new Text("Teléfono: ${widget.usuarios.telefono}", style: TextStyle(fontSize: 18.0),),
               Padding(padding: EdgeInsets.only(top: 8.0),),
               Divider(),
+              Divider(),
+               new Text("Estatus de entrada:", style: TextStyle(fontSize: 18.0),),
+              
+             
+            
+              Icon(Icons.radio_button_checked_rounded, color: Colors.red,),
+             
+             
+              Icon(Icons.radio_button_checked_rounded, color: Colors.green,),
+              Padding(padding: EdgeInsets.only(top: 10.0),),
             ],
             
             ),

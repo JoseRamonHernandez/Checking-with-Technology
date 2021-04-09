@@ -24,6 +24,7 @@ TextEditingController _nombreController;
 TextEditingController _apellidosController;
 TextEditingController _direccionController;
 TextEditingController _telefonoController;
+TextEditingController _statusController;
 
 @override
 void initState() { 
@@ -33,6 +34,7 @@ void initState() {
  _apellidosController = new TextEditingController(text: widget.usuarios.apellidos);
  _direccionController = new TextEditingController(text: widget.usuarios.direccion);
  _telefonoController = new TextEditingController(text: widget.usuarios.telefono);
+ _statusController = new TextEditingController(text: widget.usuarios.status);
 }
 
   @override
@@ -44,10 +46,12 @@ void initState() {
         title: Text('Usuario'),
         backgroundColor: Colors.black,
       ),
-      body: Container(
-        height: 570.0,
-        padding: const EdgeInsets.all(20.0),
-        child: Card(
+      body: CustomScrollView(
+        slivers: <Widget>[
+          _crearAppBAr(),
+             SliverList(
+            delegate: SliverChildListDelegate([
+         Card(
           child: Center(
             child: Column(
               children: <Widget>[
@@ -89,8 +93,16 @@ void initState() {
                   decoration: InputDecoration(icon: Icon(Icons.contact_phone_sharp),
                   labelText: 'Teléfono'),
                 ),
-                Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
+                TextField(
+                  controller: _statusController,
+                  style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
+                  decoration: InputDecoration(icon: Icon(Icons.contact_phone_sharp),
+                  labelText: 'Estatus de Acceso'),
+                ),
+                Padding(padding: EdgeInsets.only(top: 8.0),),
+               
+                
                 FlatButton(onPressed: (){
                   if(widget.usuarios.id != null){
                     usuariosReference.child(widget.usuarios.id).set({
@@ -98,7 +110,8 @@ void initState() {
                     'nombre': _nombreController.text,
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
-                    'telefono': _telefonoController.text,    
+                    'telefono': _telefonoController.text,  
+                    'status': _statusController.value.text,
                     }).then((_){
                       Navigator.pop(context);
                     });
@@ -110,6 +123,7 @@ void initState() {
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
                     'telefono': _telefonoController.text ,
+                    'status': _statusController.text,
                     }).then((_){
                       Navigator.pop(context);
                     });
@@ -121,6 +135,9 @@ void initState() {
           ),
           borderOnForeground: true,
         ),
+            ]),
+             ),
+        ],
       ),
         floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -132,7 +149,27 @@ void initState() {
         child: const Icon(Icons.arrow_back_outlined, color: Colors.black,),
         backgroundColor: Colors.yellowAccent,
       ),
+      
+          
+          
       backgroundColor: Colors.white,
     );
   }
 }
+Widget _crearAppBAr( )
+  {
+    return SliverAppBar(
+      elevation: 1.0,
+      backgroundColor: Colors.blueGrey,
+      expandedHeight: 100.0,
+      floating: false,
+      pinned: true,
+      flexibleSpace: FlexibleSpaceBar(
+        centerTitle: true,
+      title: Text('Usuario',
+      style: TextStyle(color: Colors.white, fontSize: 18.0),
+      ),
+       
+      ),
+    );
+  }

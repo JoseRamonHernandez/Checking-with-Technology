@@ -1,3 +1,5 @@
+//import 'dart:html';
+
 import 'package:ejemplo_crud/pages/drawer.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -19,6 +21,7 @@ class _UsuariosScreenState extends State<UsuariosScreen> {
 
 List<Usuarios> items;
 
+//NumberInputElement _numUsuarioController;
 TextEditingController _numUsuarioController;
 TextEditingController _nombreController;
 TextEditingController _apellidosController;
@@ -56,6 +59,7 @@ void initState() {
             child: Column(
               children: <Widget>[
                 TextField(
+                  keyboardType: TextInputType.number,
                   controller: _numUsuarioController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
                   decoration: InputDecoration(icon: Icon(Icons.attribution_outlined),
@@ -88,6 +92,7 @@ void initState() {
                 Padding(padding: EdgeInsets.only(top: 8.0),),
                 Divider(),
                 TextField(
+                  keyboardType: TextInputType.number,
                   controller: _telefonoController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
                   decoration: InputDecoration(icon: Icon(Icons.contact_phone_sharp),

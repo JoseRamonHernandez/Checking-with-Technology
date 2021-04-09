@@ -1,6 +1,6 @@
-import 'package:ejemplo_crud/model/registros.dart';
+//import 'package:ejemplo_crud/model/registros.dart';
 import 'package:ejemplo_crud/pages/drawer.dart';
-import 'package:ejemplo_crud/ui/registro_page.dart';
+//import 'package:ejemplo_crud/ui/registro_page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'dart:async';

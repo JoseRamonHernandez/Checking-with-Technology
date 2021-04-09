@@ -57,6 +57,7 @@ Widget build(BuildContext context){
         child: ListView.builder(itemCount: items.length,
         padding: EdgeInsets.only(top: 12.0),
         itemBuilder: (context, position){
+          CircularProgressIndicator();
           return Column(
             children: <Widget>[
               Divider (height: 7.0,),

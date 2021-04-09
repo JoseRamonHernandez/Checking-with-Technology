@@ -1,7 +1,7 @@
 import 'package:ejemplo_crud/model/usuarios.dart';
 import 'package:ejemplo_crud/ui/creditos_page.dart';
 import 'package:ejemplo_crud/ui/listview_usuarios.dart';
-import 'package:ejemplo_crud/ui/registro_page.dart';
+//import 'package:ejemplo_crud/ui/registro_page.dart';
 import 'package:ejemplo_crud/ui/usuarios_screen.dart';
 import 'package:flutter/material.dart';
 
@@ -82,7 +82,7 @@ class DrawerPage extends StatelessWidget {
                  ))
                ),
               Divider(),
-               ListTile(
+              /* ListTile(
                  leading: Icon(Icons.close_fullscreen_outlined, color: Color(0xffFFDA0A),size: 35,),
                  title: Text('Entradas/Salidas',
                  style: TextStyle(
@@ -95,7 +95,7 @@ class DrawerPage extends StatelessWidget {
                  ))
                  
                ),
-               Divider(),
+               Divider(),*/
                ListTile(
                  leading: Icon(Icons.account_tree_outlined, color: Color(0xffFFDA0A),size: 35,),
                  title: Text('Créditos',

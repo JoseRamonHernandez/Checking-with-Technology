@@ -102,7 +102,7 @@ void initState() {
                 TextField(
                   controller: _statusController,
                   style: TextStyle(fontSize: 17.0, color: Colors.deepOrangeAccent),
-                  decoration: InputDecoration(icon: Icon(Icons.contact_phone_sharp),
+                  decoration: InputDecoration(icon: Icon(Icons.airline_seat_recline_extra_rounded ),
                   labelText: 'Estatus de Acceso'),
                 ),
                 Padding(padding: EdgeInsets.only(top: 8.0),),
@@ -116,7 +116,7 @@ void initState() {
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
                     'telefono': _telefonoController.text,  
-                    'status': _statusController.text,
+                    'status': _statusController.text
                     }).then((_){
                       Navigator.pop(context);
                     });
@@ -128,7 +128,7 @@ void initState() {
                     'apellidos': _apellidosController.text,
                     'direccion': _direccionController.text,
                     'telefono': _telefonoController.text ,
-                    'status': _statusController.text,
+                    'status': _statusController.text
                     }).then((_){
                       Navigator.pop(context);
                     });

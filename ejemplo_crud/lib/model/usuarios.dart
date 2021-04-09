@@ -9,7 +9,7 @@ class Usuarios {
   String _apellidos;
   String _direccion;
   String _telefono;
-  String _status='false';
+  String _status;
 
   Usuarios(this._id, this._numUsuario, this._nombre, this._apellidos, this._direccion, this._telefono, this._status);
 
@@ -19,7 +19,7 @@ class Usuarios {
     this._apellidos = obj ['apellidos'];
     this._direccion = obj ['direccion'];
     this._telefono = obj ['telefono'];
-    this._status = obj ['false'];
+    this._status = obj ['status'];
   }
   String get id => _id;
   String get numUsuario => _numUsuario;
@@ -36,6 +36,6 @@ class Usuarios {
     _apellidos = snapshot.value['apellidos'];
     _direccion = snapshot.value['direccion'];
     _telefono = snapshot.value['telefono'];
-    _status = snapshot.value['false'];
+    _status = snapshot.value['status'];
   }
 }

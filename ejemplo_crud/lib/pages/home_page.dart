@@ -29,8 +29,7 @@ class _HomePageState extends State<HomePage> {
               width: 800.0,
               height: 600.0,
                      ),
-              Divider(),
-              Divider(),
+              
                     Text(
             '* Aplicación que registra, modifica y elimina datos de empleados.',
             style: TextStyle(fontSize: 30, color: Colors.white,), textAlign: TextAlign.center,
@@ -62,7 +61,7 @@ class _HomePageState extends State<HomePage> {
       flexibleSpace: FlexibleSpaceBar(
         centerTitle: true,
       title: Text('CHECKING WITH TECHNOLOGY',
-      style: TextStyle(color: Colors.white, fontSize: 18.0),
+      style: TextStyle(color: Colors.yellowAccent, fontSize: 18.0),
       ),
        background:(
          Image.asset('assets/logo4.jpg')

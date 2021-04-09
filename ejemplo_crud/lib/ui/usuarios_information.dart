@@ -67,11 +67,11 @@ List<Usuarios> items;
               Divider(),
               Divider(),
                new Text("Estatus de entrada:", style: TextStyle(fontSize: 18.0),),
-            //  if(widget.usuarios.status.toString() == '' )
-             Icon(Icons.radio_button_checked_rounded, color: Colors.red,),
+              if(widget.usuarios.status.toString() == 'false' )
+              Icon(Icons.radio_button_checked_rounded, color: Colors.red,),
               
              
-          //  if(widget.usuarios.status.toString() == 'true')
+            if(widget.usuarios.status.toString() == 'true')
               Icon(Icons.radio_button_checked_rounded, color: Colors.green,),
              
              
